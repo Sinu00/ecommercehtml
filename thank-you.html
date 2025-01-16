@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - My E-Commerce Store</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF4B6E;
+            --secondary: #6C63FF;
+            --dark: #2A2A2A;
+            --light: #F8F9FA;
+            --accent: #00D9A5;
+            --error: #FF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        /* Thank You Section */
+        .thank-you {
+            background: white;
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .thank-you h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .thank-you p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .thank-you a {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .thank-you a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Animation for fadeIn */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="thank-you">
+            <h2>Thank You for Your Purchase!</h2>
+            <p>Your order has been successfully placed. We truly appreciate your business and are excited to get your items to you!</p>
+            <p>An email confirmation has been sent to your registered email address. If you have any questions or need assistance, please feel free to contact us.</p>
+            <a href="index.html" class="btn">Return to Home</a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

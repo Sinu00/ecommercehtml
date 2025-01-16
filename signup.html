@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - My E-Commerce Store</title>
+    <style>
+        /* base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF4B6E;
+            --secondary: #6C63FF;
+            --dark: #2A2A2A;
+            --light: #F8F9FA;
+            --accent: #00D9A5;
+            --error: #FF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styles */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Signup Form Styles */
+        .auth-form {
+            margin-top: 120px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .auth-form h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--light);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 75, 110, 0.1);
+        }
+
+        .form-group input:invalid:not(:placeholder-shown) {
+            border-color: var(--error);
+        }
+
+        .form-group input:invalid:not(:placeholder-shown) ~ .error-message {
+            display: block;
+        }
+
+        .error-message {
+            display: none;
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            position: absolute;
+            bottom: -20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 75, 110, 0.3);
+        }
+
+        .auth-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .auth-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .auth-link a:hover {
+            color: var(--secondary);
+        }
+
+        .cart-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            nav {
+                display: none; /* Add a mobile menu in real implementation */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-form {
+                margin-top: 100px;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>My E-Commerce Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart <span id="cart-counter" class="cart-badge">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-form">
+            <h2>Sign Up</h2>
+            <form id="signup-form" onsubmit="return handleSignup(event)">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+                    <span class="error-message">Please enter your full name</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <span class="error-message">Please enter a valid email address</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="6" placeholder="Choose a password">
+                    <div class="password-strength">
+                        <div class="password-strength-bar"></div>
+                    </div>
+                    <span class="error-message">Password must be at least 6 characters</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+                    <span class="error-message">Passwords do not match</span>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            <p class="auth-link">Already have an account? <a href="login.html">Login here</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My E-Commerce Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+        function handleSignup(event) {
+            event.preventDefault();
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            alert('Signup Successful!');
+            return true;
+        }
+        // Simple password strength indicator
+
+        passwordInput.addEventListener('input', function() {
+            const value = this.value;
+            let strength = 0;
+            
+            if (value.length >= 6) strength += 25;
+            if (value.match(/[A-Z]/)) strength += 25;
+            if (value.match(/[0-9]/)) strength += 25;
+            if (value.match(/[^A-Za-z0-9]/)) strength += 25;
+
+            strengthBar.style.width = strength + '%';
+            
+            if (strength <= 25) {
+                strengthBar.style.backgroundColor = '#FF4444';
+            } else if (strength <= 50) {
+                strengthBar.style.backgroundColor = '#FFB74D';
+            } else if (strength <= 75) {
+                strengthBar.style.backgroundColor = '#4CAF50';
+            } else {
+                strengthBar.style.backgroundColor = '#00D9A5';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - My E-Commerce Store</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF4B6E;
+            --secondary: #6C63FF;
+            --dark: #2A2A2A;
+            --light: #F8F9FA;
+            --accent: #00D9A5;
+            --error: #FF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styles */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Privacy Policy Section */
+        .privacy-policy {
+            margin-top: 120px;
+            padding: 2.5rem;
+            max-width: 900px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .privacy-policy h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .privacy-policy h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            color: var(--primary);
+        }
+
+        .privacy-policy p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .privacy-policy strong {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .privacy-policy a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy-policy a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            nav {
+                display: none; /* Add a mobile menu in real implementation */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-policy {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>My E-Commerce Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="product-catalog.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p>At <strong>My E-Commerce Store</strong>, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data.</p>
+
+            <h3>Data Collection</h3>
+            <p>We collect personal information such as your name, email address, phone number, and shipping address when you create an account, place an order, or interact with our website.</p>
+
+            <h3>Data Usage</h3>
+            <p>Your personal information is used to process orders, provide customer support, and improve your shopping experience. We may also use your data to send you promotional offers and updates, but only if you have opted in to receive such communications.</p>
+
+            <h3>Data Retention</h3>
+            <p>We retain your personal data for a period of <strong>12 months</strong> after your last interaction with our website. After this period, your data will be securely deleted or anonymized.</p>
+
+            <h3>Data Security</h3>
+            <p>We implement industry-standard security measures to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+
+            <h3>Your Rights</h3>
+            <p>You have the right to access, update, or delete your personal information at any time. If you have any questions or concerns about our Privacy Policy, please contact us at <a href="mailto:privacy@myecommercestore.com">privacy@myecommercestore.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My E-Commerce Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
